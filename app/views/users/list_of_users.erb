@@ -7,10 +7,13 @@
 <ul>
   <% @users.each do |user| %>
   <li>
-    <%= user.id %> - 
-    <%= user.last_name %>, 
-    <%= user.first_name %> - 
-    <a href="#">add friend</a> - 
+    <p>
+      <%= user.last_name %>, 
+      <%= user.first_name %> - 
+      <form action="/add_friend/<%= user.id %>">
+          <input type="submit" value="Add Friend!">
+      </form>
+    </p>
   </li>
   <% end %>
 </ul>

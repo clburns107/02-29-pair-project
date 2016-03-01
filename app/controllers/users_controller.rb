@@ -53,7 +53,7 @@ MyApp.post "/submit/update_user" do
 end
 
 MyApp.post "/users/delete" do
-  @user = User.find_by_id(1)
+  @user = User.find_by_id(session["user_id"])
   @user.delete
   redirect "/list_of_users"
 end

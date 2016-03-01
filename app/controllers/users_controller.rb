@@ -1,3 +1,9 @@
+# Gets a list of all users.
+MyApp.get "/list_of_users" do
+  @users = User.all
+  erb :"users/list_of_users"
+end
+
 MyApp.get "/dashboard" do
   erb :"users/dashboard"
 end

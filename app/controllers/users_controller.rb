@@ -12,10 +12,6 @@ MyApp.get "/users/new" do
   erb :"users/new"
 end
 
-MyApp.get "/users/edit" do
-  erb :"users/edit"
-end
-
 MyApp.post "/submit/new_user" do
   @new_user = User.new
   @new_user.first_name = params[:first_name]
@@ -30,5 +26,25 @@ MyApp.post "/submit/new_user" do
     erb :"users/dashboard"
   else
     erb :"login_error"
+  end
+end
+
+MyApp.get "/users/:id/edit_form" do
+  @user = User.find_by_id(params[:id])
+  erb :"users/edit"
+end
+
+MyApp.post "/submit/update_user" do
+  @user = User.find_by_id(1)
+  binding.pry
+  if @user != nil
+    @user.first_name = params[:first_name]
+    @user.last_name = params[:last_name]
+    @user.email = params[:email]
+    @user.password = params[:password]
+    @user.save
+    redirect "/dashboard"
+  # else
+  #   erb :"login_error"
   end
 end

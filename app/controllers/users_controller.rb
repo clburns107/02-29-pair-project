@@ -9,7 +9,8 @@ MyApp.get "/dashboard" do
   if @current_user != nil
     erb :"users/dashboard"
   else
-    erb :"login_error"
+    erb :"logins/login_error"
+  end
 end
 
 MyApp.get "/users/new" do
@@ -29,7 +30,7 @@ MyApp.post "/submit/new_user" do
     @user_reviews = Review.where(user_id: session["user_id"])
     erb :"users/dashboard"
   else
-    erb :"login_error"
+    erb :"logins/login_error"
   end
 end
 
@@ -47,8 +48,8 @@ MyApp.post "/submit/update_user" do
     @user.password = params[:password]
     @user.save
     redirect "/dashboard"
-  # else
-  #   erb :"login_error"
+  else
+    erb :"logins/login_error"
   end
 end
 

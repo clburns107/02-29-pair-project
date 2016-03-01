@@ -1,0 +1,24 @@
+this page displays a login form and a link to create a user.
+
+
+<!doctype html>
+<html>
+<h1 align="center"> Create an Account!
+  <meta charset="utf-8">
+  <title>Create User Page</title>
+</h1>
+
+<body>
+
+  <form action="/login_user" method="post">
+    <p>Email: <input type="text" name="email"></p>
+    <p>Password: <input type="text" name="password"></p>
+    <input type="submit" value="Log In!">
+  </form>
+
+  <a href="/users/new">Create a New Account!</a>
+
+</body>
+</html>
+
+

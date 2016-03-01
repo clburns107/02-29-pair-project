@@ -5,7 +5,11 @@ MyApp.get "/list_of_users" do
 end
 
 MyApp.get "/dashboard" do
-  erb :"users/dashboard"
+  @current_user = User.find_by_id(session["user_id"])
+  if @current_user != nil
+    erb :"users/dashboard"
+  else
+    erb :"login_error"
 end
 
 MyApp.get "/users/new" do
@@ -21,8 +25,8 @@ MyApp.post "/submit/new_user" do
   @new_user.save
 
   if @new_user.password = params[:password]
-    # session["user_id"] = @new_user.id
-    # @user_reviews = Review.where(user_id: session["user_id"])
+    session["user_id"] = @new_user.id
+    @user_reviews = Review.where(user_id: session["user_id"])
     erb :"users/dashboard"
   else
     erb :"login_error"

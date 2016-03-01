@@ -1,1 +1,8 @@
 this shows all of a user's friends :)
+
+<% @all_my_friends.each do |friend| %>
+  <a href="???">
+  <%= friend.first_name %>
+  <%= friend.last_name %>
+  </a>
+<% end %>

@@ -10,7 +10,7 @@
     <p>
       <%= user.last_name %>, 
       <%= user.first_name %> - 
-      <form action="/add_friend/<%= user.id %>">
+      <form action="/add_friend/<%= user.id %>" method="post">
           <input type="submit" value="Add Friend!">
       </form>
     </p>

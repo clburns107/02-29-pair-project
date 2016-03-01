@@ -2,26 +2,26 @@
   <input type="submit" value="Log Out!">
 </form>
 
-<% if @ratings = [] %>
-  "No rankings yet!"
-<% else %>
-  <ul>
-    <% @ratings.each do |rating| %>
-      <li>
-      <%= rating.title %> 
-      <%= rating.stars %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<p>
+  <% if @ratings = [] %>
+    "No rankings yet!"
+  <% else %>
+    <ul>
+      <% @ratings.each do |rating| %>
+        <li>
+        <%= rating.title %> 
+        <%= rating.stars %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
 
 
-this displays the user that is logged in's name
-as well as all movies they have personally reviewed
+<p>
+<a href="/view_friends_reviews">View Friends' Reviews</a>
+</p>
 
-
-link to view reviews/recommendations
-
-
-
-link to add a review
+<p>
+<a href="/add_review">Add A Review</a>
+</p>

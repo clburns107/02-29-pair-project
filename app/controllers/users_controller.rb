@@ -39,7 +39,7 @@ MyApp.get "/users/:id/edit_form" do
 end
 
 MyApp.post "/submit/update_user" do
-  @user = User.find_by_id(1)
+  @user = User.find_by_id(session["user_id"])
   if @user != nil
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]

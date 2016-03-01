@@ -7,6 +7,7 @@ end
 MyApp.get "/dashboard" do
   @current_user = User.find_by_id(session["user_id"])
   if @current_user != nil
+    @ratings = Rating.where(user_id: session["user_id"])
     erb :"users/dashboard"
   else
     erb :"logins/login_error"

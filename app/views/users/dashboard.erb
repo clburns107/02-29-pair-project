@@ -2,7 +2,14 @@
   <input type="submit" value="Log Out!">
 </form>
 
-
+<ul>
+  <% @ratings.each do |rating| %>
+    <li>
+    <%= rating.title %> 
+    <%= rating.stars %>
+    </li>
+  <% end %>
+</ul>
 
 
 this displays the user that is logged in's name

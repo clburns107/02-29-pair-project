@@ -3,8 +3,9 @@
 <ul>
   <% @users.each do |user| %>
   <li>
-    <%= user.last_name%>, 
-    <%= user.first_name%> - 
+    <%= user.id %> - 
+    <%= user.last_name %>, 
+    <%= user.first_name %> - 
     <a href="#">add friend</a> - 
   </li>
   <% end %>

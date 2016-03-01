@@ -36,7 +36,6 @@ end
 
 MyApp.post "/submit/update_user" do
   @user = User.find_by_id(1)
-  binding.pry
   if @user != nil
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]
@@ -47,4 +46,10 @@ MyApp.post "/submit/update_user" do
   # else
   #   erb :"login_error"
   end
+end
+
+MyApp.post "/users/delete" do
+  @user = User.find_by_id(1)
+  @user.delete
+  redirect "/list_of_users"
 end

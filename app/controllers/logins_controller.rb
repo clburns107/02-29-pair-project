@@ -12,3 +12,13 @@ MyApp.post "/login_user" do
     erb :"logins/login_error"
   end
 end
+
+MyApp.post "/submit_logout" do
+  @current_user = User.find_by_id(session["user_id"])
+  if @current_user != nil 
+    session["user_id"] = nil
+    redirect "/" 
+  else
+    erb :"logins/login_error"
+  end
+end

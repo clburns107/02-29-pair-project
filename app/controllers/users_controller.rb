@@ -22,8 +22,8 @@ MyApp.post "/submit/new_user" do
   @new_user.save
 
   if @new_user.password = params[:password]
-    session["user_id"] = @new_user.id
-    @user_reviews = Review.where(user_id: session["user_id"])
+    # session["user_id"] = @new_user.id
+    # @user_reviews = Review.where(user_id: session["user_id"])
     erb :"users/dashboard"
   else
     erb :"login_error"

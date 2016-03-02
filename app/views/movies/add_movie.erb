@@ -1,3 +1,13 @@
 This page displays if there are no movie titles in the database matching the search. 
 
 This page displays a form to add movie to database. 
+
+
+That movie does not exist
+Please add it to the database to rate the movie
+
+<form action="/submit_new_movie" method="post">
+  <p>Title: <input type="text" name="title"></p>
+  <p>Image Name: <input type="text" name="image_name"></p>
+  <input type="submit" value="Submit New Movie!">
+</form>

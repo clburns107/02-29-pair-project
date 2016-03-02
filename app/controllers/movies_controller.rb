@@ -24,9 +24,10 @@ MyApp.get "/submit_movie_search" do
 end
 
 MyApp.post "/submit_new_movie" do
+  @api = HTTParty.get("http://www.omdbapi.com/?t=#{params["title"]}&y=&plot=short&r=json")
   @new_movie = Movie.new
   @new_movie.title = params[:title]
-  @new_movie.image_name = params[:image_name]
+  @new_movie.image_name = @api["Poster"]
   @new_movie.save
   erb :"movies/review_movie"
 end
@@ -43,6 +44,7 @@ MyApp.post "/submit_movie_update_form/:id" do
   @movie_search.save
   erb :"movies/review_movie"
 end
+
 
 
 

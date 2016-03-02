@@ -2,10 +2,10 @@ This page will display the movie info stored in database and buttons that allow 
 
 <% if @movie_search == nil %>
   <h1><%= @new_movie.title %></h1>
-  <p><%= @new_movie.image_name %></p>
+  <p><img src="<%= @new_movie.image_name %>"></p>
 <% else %>
   <h1><%= @movie_search.title %></h1>
-  <p><img src="/<%= @movie_search.image_name %>"></p>
+  <p><img src="<%= @movie_search.image_name %>"></p>
 <% end %>
 
   <table border="0">

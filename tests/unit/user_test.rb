@@ -40,7 +40,6 @@ class UserTest < Minitest::Test
     @login4.first_name = "Cher"
     @login4.last_name = "Bone"
     @login4.password = "sonnyandcher"
-    @login4.save    
     assert_equal(true, @login4.duplicate?)
   end
 
@@ -51,8 +50,7 @@ class UserTest < Minitest::Test
     @login5.email = "different@example.com"
     @login5.first_name = "Bryan"
     @login5.last_name = "Adams"
-    @login5.password = "summerof69"
-    @login5.save    
+    @login5.password = "summerof69"  
     assert_equal(false, @login5.duplicate?)
   end
 

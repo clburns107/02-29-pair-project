@@ -30,3 +30,23 @@ MyApp.post "/submit_new_movie" do
   @new_movie.save
   erb :"movies/review_movie"
 end
+
+MyApp.get "/update_movie/:id" do
+  @movie = Movie.find_by_id(params[:id])
+  erb :"movies/update_movie"
+end
+
+MyApp.post "/submit_movie_update_form/:id" do
+  @movie_search = Movie.find_by_id(params[:id])
+  @movie_search.image_name = params[:image_name]
+  @movie_search.title = params[:title]
+  @movie_search.save
+  erb :"movies/review_movie"
+end
+
+
+
+
+
+
+

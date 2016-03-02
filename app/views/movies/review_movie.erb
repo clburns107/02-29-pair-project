@@ -44,3 +44,11 @@ This page will display the movie info stored in database and buttons that allow 
 </table>
 
 
+<form action="/update_movie/<%
+  if @movie_search == nil %>
+    <%= @new_movie.id %>
+  <% else %>
+    <%= @movie_search.id %>
+  <% end %>">
+  <input type="submit" value="Update Movie">
+</form>

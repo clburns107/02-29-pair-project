@@ -25,14 +25,14 @@ class UserTest < Minitest::Test
     @login3.last_name = "Baxter"
     @login3.password = "doobiebrothers"
     @login3.save
-
   end
 
   def test_potato
     assert_equal("delish", @potato)
   end
 
-  # Test to see if duplicate method returns true if two users create the same email address.
+  # Test to see if duplicate method returns true
+  # Compares new email to emails in database.
   # Returns 'true'
   def test_if_duplicate_true
     @login4 = User.new
@@ -43,20 +43,16 @@ class UserTest < Minitest::Test
     assert_equal(true, @login4.duplicate?)
   end
 
-  # Test to see if a duplicate method returns false if two users create different email addresses.
+  # Test to see if a duplicate method returns false
+  # Compares new email to emails in database.
   # Returns 'false'
   def test_if_duplicate_false
     @login5 = User.new
     @login5.email = "different@example.com"
     @login5.first_name = "Bryan"
     @login5.last_name = "Adams"
-    @login5.password = "summerof69"  
+    @login5.password = "summerof69"
     assert_equal(false, @login5.duplicate?)
   end
-
-
-
-
-
   # Your tests are defined here.
 end

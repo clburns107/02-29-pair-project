@@ -43,6 +43,8 @@ class User < ActiveRecord::Base
     @all_users.each do |user|
       if self.email == user.email
         @duplicate = true
+      else
+        @duplicate = false
       end
     end
     return @duplicate

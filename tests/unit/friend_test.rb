@@ -35,13 +35,11 @@ class FriendTest < Minitest::Test
     @user2.user_id = @login1.id
     @user2.friend_id = @login3.id
     @user2.save
-
   end
 
   def test_potato
     assert_equal("delish", @potato)
   end
-
 
   def test_friend_first_name
     assert_equal("Michael", @user1.first_name)

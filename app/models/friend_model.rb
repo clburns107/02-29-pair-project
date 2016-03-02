@@ -4,18 +4,6 @@
 
 class Friend < ActiveRecord::Base
 
-  #Class Method for collection of an assignee's assignments
-  #
-  #takes an argument of a collection of assignments
-  #
-  #Returns all todo items assigned to an assignee
-    def self.delete_friend(friends)
-  
-      friends.each do |friend|
-        friend.delete
-      end
-    end
-
   #Gets a friends first name from users table
   def first_name
     friend = User.find_by_id(self.friend_id)
@@ -28,4 +16,9 @@ class Friend < ActiveRecord::Base
     return friend.last_name
   end
 
+  def user_id
+    friend = User.find_by_id(self.friend_id)
+    return friend.id
+  end
+  
 end

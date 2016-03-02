@@ -8,6 +8,7 @@ end
 
 MyApp.get "/my_friends" do
   @all_my_friends = Friend.where(user_id: session["user_id"])
+  
   erb :"friends/users_friends"
 end
 
@@ -20,6 +21,7 @@ end
 MyApp.post "/delete_friend/:friend_id" do
   @friends = Friend.where({user_id: session["user_id"], friend_id: params[:friend_id]})
 
-  Friend.delete_friend(@friends)
+
+  @friends.delete_all
   erb :"users/dashboard"
 end

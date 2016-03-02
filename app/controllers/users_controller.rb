@@ -28,7 +28,7 @@ MyApp.post "/submit/new_user" do
 
   if @new_user.password = params[:password]
     session["user_id"] = @new_user.id
-    @user_reviews = Review.where(user_id: session["user_id"])
+    @user_reviews = Rating.where(user_id: session["user_id"])
     erb :"users/dashboard"
   else
     erb :"logins/login_error"

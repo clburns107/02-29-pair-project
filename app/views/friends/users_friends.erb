@@ -5,4 +5,7 @@ this shows all of a user's friends :)
   <%= friend.first_name %>
   <%= friend.last_name %>
   </a>
+  <form action="/delete_friend/<%= friend.id %>" method="post">
+    <input type="submit" value="Delete Friend">
+  </form>
 <% end %>

@@ -1,0 +1,46 @@
+<h1>
+  <%=@friend_id.first_name %>
+  <%= @friend_id.last_name %>'s Reviews
+</h1>
+
+<br>
+
+<form action="/submit_logout" method="post">
+  <input type="submit" value="Log Out!">
+</form>
+
+<p>
+  <% if @ratings = [] %>
+    "No rankings yet!"
+  <% else %>
+    <ul>
+      <% @ratings.each do |rating| %>
+        <li>
+        <%= rating.title %> 
+        <%= rating.stars %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
+
+<p>
+<a href="/view_friends_reviews">View Friends' Reviews</a>
+</p>
+
+<p>
+<a href="/add_review">Add A Review</a>
+</p>
+
+<p>
+<a href="/list_of_users">Add A Friend</a>
+</p>
+
+<p>
+<a href="/my_friends">View My Friends</a>
+</p>
+
+<p>
+<a href="/dashboard">View My Dashboard</a>
+</p>

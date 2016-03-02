@@ -10,3 +10,9 @@ MyApp.get "/my_friends" do
   @all_my_friends = Friend.where(user_id: session["user_id"])
   erb :"friends/users_friends"
 end
+
+MyApp.get "/friends_dashboard/:friend_id" do
+  @friend_id = Friend.find_by_id(params[:friend_id])
+  @ratings = Rating.where(user_id: params[:friend_id])
+  erb :"friends/friends_dashboard"
+end

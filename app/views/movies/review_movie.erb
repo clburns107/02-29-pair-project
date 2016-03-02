@@ -1,11 +1,11 @@
 This page will display the movie info stored in database and buttons that allow a user to score it. 
 
 <% if @movie_search == nil %>
-  <%= @new_movie.title %>
-  <%= @new_movie.image_name %>
+  <h1><%= @new_movie.title %></h1>
+  <p><%= @new_movie.image_name %></p>
 <% else %>
-  <%= @movie_search.title %>
-  <%= @movie_search.image_name %>
+  <h1><%= @movie_search.title %></h1>
+  <p><img src="/<%= @movie_search.image_name %>"></p>
 <% end %>
 
   <table border="0">

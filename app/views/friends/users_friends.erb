@@ -4,9 +4,9 @@ this shows all of a user's friends :)
   <a href="/friends_dashboard/<%= friend.id %>">
   <%= friend.first_name %>
   <%= friend.last_name %>
-  <%= friend.user_id %>
+  <%= friend.friend_id %>
   </a>
-  <form action="/delete_friend/<%= friend.user_id %>" method="post">
+  <form action="/delete_friend/<%= friend.friend_id %>" method="post">
     <input type="submit" value="Delete Friend">
   </form>
 <% end %>

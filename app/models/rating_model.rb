@@ -4,6 +4,4 @@
 # Relationship to movies: id on movies table
 
 class Rating < ActiveRecord::Base
-
-  
 end

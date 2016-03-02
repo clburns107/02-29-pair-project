@@ -16,11 +16,11 @@ end
 
 MyApp.get "/submit_movie_search" do
   @movie_search = Movie.find_by_title(params[:title])
-    if !@movie_search.nil?
-      erb :"movies/review_movie"
-    else
-      erb :"movies/add_movie"
-    end
+  if !@movie_search.nil?
+    erb :"movies/review_movie"
+  else
+    erb :"movies/add_movie"
+  end
 end
 
 MyApp.post "/submit_new_movie" do

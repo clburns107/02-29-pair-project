@@ -1,6 +1,5 @@
-<h1>
-  <%=@friend_id.first_name %>
-  <%= @friend_id.last_name %>'s Reviews
+<h1><%= @friend.first_name %> 
+<%= @friend.last_name %>'s Reviews!
 </h1>
 
 <br>
@@ -10,7 +9,7 @@
 </form>
 
 <p>
-  <% if @ratings = [] %>
+  <% if @ratings == [] %>
     "No rankings yet!"
   <% else %>
     <ul>

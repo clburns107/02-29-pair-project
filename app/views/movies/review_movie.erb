@@ -11,31 +11,59 @@ This page will display the movie info stored in database and buttons that allow 
   <table border="0">
   <tr>
     <td>
-      <form action="/submit_vote_1">
+
+      <form action="/submit_movie_review/
+        <% if @movie_search == nil %>
+          <%= @new_movie.id %>
+        <% else %>
+          <%= @movie_search.id %>
+        <% end %>/<%= @current_user.id %>/1">
+
         <input type="submit" value="1 STAR">
       </form>
     </td>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <td>
-      <form action="/submit_vote_2">
+      <form action="/submit_review_2_star/">
         <input type="submit" value="2 STARS">
       </form>
     </td>
 
     <td>
-      <form action="/submit_vote_3">
+      <form action="/submit_review_3_star/">
         <input type="submit" value="3 STARS">
       </form>
     </td>
 
     <td>
-      <form action="/submit_vote_4">
+      <form action="/submit_review_4_star/">
         <input type="submit" value="4 STARS">
       </form>
     </td>
 
     <td>
-      <form action="/submit_vote_5">
+      <form action="/submit_review_5_star/">
         <input type="submit" value="5 STARS">
       </form>
     </td>

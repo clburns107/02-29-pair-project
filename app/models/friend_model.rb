@@ -22,19 +22,13 @@ class Friend < ActiveRecord::Base
 #takes an argument of a collection of friends
 #
 #Returns all ratings belonging to all friends inside of an array
-
   def self.friends_reviews(friends)
     friendses_ids = []
     friendses_rating_objects = []
-
     friends.each do |f|
       friendses_ids << f.friend_id
     end
-
-    friendses_ids.each do |id|
-      friendses_rating_objects << Rating.where(user_id: id)
-    end
-
+      friendses_rating_objects = Rating.where({user_id: friendses_ids})
     return friendses_rating_objects
   end
 

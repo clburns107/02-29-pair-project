@@ -67,11 +67,23 @@ end
 # Displays 
 # 1. Movie Poster
 # 2. All of your friends who have reviewed the movie.
-# 3. An average rating of all your friends.
+# 3. An average rating of all your friends' ratings.
 MyApp.get "/movie_status_page/:movie_id" do
-
-  erb :"movies/movie_status"
+  @current_user = User.find_by_id(session["user_id"])
+  if !@current_user.nil?
+    @friendses_ids = []
+    @friends = Friend.where(user_id: session["user_id"])
+    @friends.each do |friend|
+      @friendses_ids << @friend.friend_id
+    end
+    @movie = Movie.find_by_id(params[:movie_id])
+    @ratings = Rating.where({movie_id: params["movie_id"], user_id: "#{@friendses_ids}"})
+    binding.pry
+    erb :"movies/movie_status"
+  else
+  end
 end
+
 
 
 

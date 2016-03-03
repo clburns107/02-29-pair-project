@@ -1,1 +1,19 @@
 this will show a poster of the movie, all of your friends who have reviewed the movie, and their average rating.
+
+<p><%= @movie.title %></p>
+<p><img src="<%= @movie.image_name %>"></p>
+
+<ul>
+  <% @ratings.each do |rating| %>
+  <li>
+  <%= rating.name.first_name %> 
+  <%= rating.name.last_name %>
+  </li>
+  <% end %>
+</ul>
+
+
+
+
+
+

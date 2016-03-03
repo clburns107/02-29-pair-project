@@ -10,5 +10,10 @@ class Rating < ActiveRecord::Base
     return @movie.title
   end
 
+  def name
+    user = User.find_by_id(self.user_id)
+    return user
+  end
+
 
 end

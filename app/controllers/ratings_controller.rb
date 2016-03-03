@@ -8,5 +8,3 @@ MyApp.post "/submit_movie_review/:movie_id/:user_id/:stars" do
   @new_rating.save
   redirect "/add_review"
 end
-
-# 

@@ -4,8 +4,12 @@ This will display all ratings of all friends for one user.
 
 for each friend object we want the match object out of ratings db
 
-<% @f_reviews.each do |f| %>
-  <%= f.user_id %>
-  <%= f.movie_id %>
-  <%= f.stars %>
+
+  <% @f_reviews.each do |f| %>
+    <ul>
+      <%= f.name.first_name %>
+      <%= f.name.last_name %>: 
+      <%= f.title %>: 
+      <%= f.stars %> stars
+    </ul>
 <% end %>

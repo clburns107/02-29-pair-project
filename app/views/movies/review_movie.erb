@@ -1,24 +1,13 @@
 This page will display the movie info stored in database and buttons that allow a user to score it. 
 
-<% if @movie_search == nil %>
-  <h1><%= @new_movie.title %></h1>
-  <p><img src="<%= @new_movie.image_name %>"></p>
-<% else %>
-  <h1><%= @movie_search.title %></h1>
-  <p><img src="<%= @movie_search.image_name %>"></p>
-<% end %>
+
+  <h1><%= @movie.title %></h1>
+  <p><img src="<%= @movie.image_name %>"></p>
 
   <table border="0">
   <tr>
     <td>
-
-      <form action="/submit_movie_review/
-        <% if @movie_search == nil %>
-          <%= @new_movie.id %>
-        <% else %>
-          <%= @movie_search.id %>
-        <% end %>/<%= @current_user.id %>/1">
-
+      <form action="/submit_movie_review/userid/integer">
         <input type="submit" value="1 STAR">
       </form>
     </td>

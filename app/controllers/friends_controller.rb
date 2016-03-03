@@ -25,15 +25,19 @@ end
 MyApp.post "/delete_friend/:friend_id" do
   @friends = Friend.where({user_id: session["user_id"], friend_id: params[:friend_id]})
   @friends.delete_all
-  erb :"users/dashboard"
+  redirect "/dashboard"
 end
 
 MyApp.get "/all_friends_reviews" do
   @current_user = User.find_by_id(session["user_id"])
   if !@current_user.nil?
     @friends = Friend.where(user_id: session["user_id"])
-
-  erb :"friends/all_friends_ratings"
+    @f_reviews = Friend.friends_reviews(@friends)
+    binding.pry
+    erb :"friends/all_friends_ratings"
+  else
+    erb :"logins/login_error"
+  end
 end
 
 

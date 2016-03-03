@@ -64,6 +64,14 @@ MyApp.post "/submit_movie_update_form/:id" do
   erb :"movies/review_movie"
 end
 
+# Displays 
+# 1. Movie Poster
+# 2. All of your friends who have reviewed the movie.
+# 3. An average rating of all your friends.
+MyApp.get "/movie_status_page/:movie_id" do
+
+  erb :"movies/movie_status"
+end
 
 
 

@@ -9,7 +9,7 @@ for each friend object we want the match object out of ratings db
     <ul>
       <%= f.name.first_name %>
       <%= f.name.last_name %>: 
-      <%= f.title %>: 
+      <a href="/movie_status_page/<%= f.movie_id %>"><%= f.title %>:</a>
       <%= f.stars %> stars
     </ul>
 <% end %>

@@ -29,6 +29,26 @@ MyApp.post "/delete_friend/:friend_id" do
 end
 
 MyApp.get "/all_friends_reviews" do
+  @current_user = User.find_by_id(session["user_id"])
+  if !@current_user.nil?
+    @friends = Friend.where(user_id: session["user_id"])
 
   erb :"friends/all_friends_ratings"
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@ MyApp.post "/submit_movie_review/:movie_id/:user_id/:stars" do
     @new_rating.user_id = params[:user_id]
     @new_rating.stars = params[:stars]
     @new_rating.save
-  else 
+  else
     @current_rating = Rating.find_by(user_id: params[:user_id], movie_id: params[:movie_id])
     @current_rating.stars = params[:stars]
     @current_rating.save

@@ -32,7 +32,7 @@ MyApp.get "/all_friends_reviews" do
   @current_user = User.find_by_id(session["user_id"])
   if !@current_user.nil?
     @friends = Friend.where(user_id: session["user_id"])
-    @f_reviews = Friend.friends_reviews(@friends) 
+    @f_reviews = Friend.friends_reviews(@friends)
     erb :"friends/all_friends_ratings"
   else
     erb :"logins/login_error"

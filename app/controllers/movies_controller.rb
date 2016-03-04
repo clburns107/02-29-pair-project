@@ -15,7 +15,7 @@ MyApp.get "/review_movie/:movie_id" do
   if !@current_user.nil?
     @movie = Movie.find_by_id(params[:movie_id])
     erb :"movies/review_movie"
-  else 
+  else
     erb :"login_error.erb"
   end
 end
@@ -26,23 +26,23 @@ end
 # if variable is nil display add movie to database page
 MyApp.get "/submit_movie_search" do
   @current_user = User.find_by_id(session["user_id"])
-    if !@current_user.nil?
-      @movie_search = Movie.find_by_title(params[:title])
-      if !@movie_search.nil?
-        redirect "/review_movie/#{@movie_search.id}"
-      else
-        erb :"movies/add_movie"
-      end
+  if !@current_user.nil?
+    @movie_search = Movie.find_by_title(params[:title])
+    if !@movie_search.nil?
+      redirect "/review_movie/#{@movie_search.id}"
     else
-      erb :"logins/login_error"
+      erb :"movies/add_movie"
     end
+  else
+    erb :"logins/login_error"
+  end
 end
 
 # Creates new movie object in movies table
 # Retreives the poster for movie title from api
 # Saves new movie title and poster link
 MyApp.post "/submit_new_movie" do
-  @api = HTTParty.get("http://www.omdbapi.com/?t=#{params["title"]}&y=&plot=short&r=json")
+  @api = HTTParty.get("http://www.omdbapi.com/?t=#{params['title']}&y=&plot=short&r=json")
   @movie = Movie.new
   @movie.title = params[:title]
   @movie.image_name = @api["Poster"]
@@ -64,7 +64,7 @@ MyApp.post "/submit_movie_update_form/:id" do
   erb :"movies/review_movie"
 end
 
-# Displays 
+# Displays
 # 1. Movie Poster
 # 2. All of your friends who have reviewed the movie.
 # 3. An average rating of all your friends' ratings.

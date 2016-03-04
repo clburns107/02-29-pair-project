@@ -37,11 +37,12 @@ MyApp.post "/submit/new_user" do
   @new_user.name_valid
   @errors = @new_user.get_errors
 
-  if @new_user.set_errors == nil
+  if @errors == []
   @new_user.save
-    if @new_user.password = params[:password]
-      session["user_id"] = @new_user.id
-      @user_reviews = Rating.where(user_id: session["user_id"])
+  @current_user = @new_user
+    if @current_user.password = params[:password]
+      session["user_id"] = @current_user.id
+      @ratings = Rating.where(user_id: session["user_id"])
       erb :"users/dashboard"
     else
       erb :"logins/login_error"

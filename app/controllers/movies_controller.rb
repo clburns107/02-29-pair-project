@@ -80,7 +80,6 @@ MyApp.get "/movie_status_page/:movie_id" do
         @stars_arr << rating.stars
       end
       @stars_divider = @stars_arr.count
-    end
     erb :"movies/movie_status"
   else
   end

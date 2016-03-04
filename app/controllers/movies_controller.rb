@@ -74,10 +74,10 @@ MyApp.get "/movie_status_page/:movie_id" do
     @friendses_ids = []
     @friends = Friend.where(user_id: session["user_id"])
     @friends.each do |friend|
-      @friendses_ids << @friend.friend_id
+      @friendses_ids << friend.friend_id
     end
     @movie = Movie.find_by_id(params[:movie_id])
-    @ratings = Rating.where({movie_id: params["movie_id"], user_id: "#{@friendses_ids}"})
+    @ratings = Rating.where({movie_id: params["movie_id"], user_id: @friendses_ids})
     binding.pry
     erb :"movies/movie_status"
   else

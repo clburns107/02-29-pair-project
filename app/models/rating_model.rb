@@ -15,6 +15,17 @@ class Rating < ActiveRecord::Base
     return user
   end
 
-
+  def self.avg_stars(ratings_object)
+    array = []
+    ratings_object.each do |rating|
+      array << rating.stars
+    end
+    sum = 0
+    array.each do |star|
+      sum += star
+    end
+    @avg_stars = sum / array.count
+    return @avg_stars
+  end
 
 end

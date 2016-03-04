@@ -1,4 +1,8 @@
-this will show a poster of the movie, all of your friends who have reviewed the movie, and their average rating.
+<!-- this will show a poster of the movie, all of your friends who have reviewed the movie, and their average rating. -->
+
+<form action="/submit_logout" method="post">
+  <input type="submit" value="Log Out!">
+</form>
 
 <p><%= @movie.title %></p>
 <p><img src="<%= @movie.image_name %>"></p>
@@ -15,7 +19,25 @@ this will show a poster of the movie, all of your friends who have reviewed the 
   <% end %>
 </ul>
 
+<p>
+<a href="/all_friends_reviews">View Friends' Reviews</a>
+</p>
 
+<p>
+<a href="/add_review">Add A Review</a>
+</p>
+
+<p>
+<a href="/list_of_users">Add A Friend</a>
+</p>
+
+<p>
+<a href="/my_friends">View My Friends</a>
+</p>
+
+<p>
+<a href="/dashboard">View My Dashboard</a>
+</p>
 
 
 

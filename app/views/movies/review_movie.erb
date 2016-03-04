@@ -1,4 +1,8 @@
-This page will display the movie info stored in database and buttons that allow a user to score it. 
+<!-- This page will display the movie info stored in database and buttons that allow a user to score it.  -->
+
+<form action="/submit_logout" method="post">
+  <input type="submit" value="Log Out!">
+</form>
 
 
   <h1><%= @movie.title %></h1>
@@ -59,4 +63,8 @@ This page will display the movie info stored in database and buttons that allow 
 
 <p>
 <a href="/my_friends">View My Friends</a>
+</p>
+
+<p>
+<a href="/dashboard">View My Dashboard</a>
 </p>

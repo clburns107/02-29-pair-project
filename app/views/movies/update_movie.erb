@@ -1,3 +1,7 @@
+<form action="/submit_logout" method="post">
+  <input type="submit" value="Log Out!">
+</form>
+
 Please update information for "<%= @movie.title %>".
 
 <form action="/submit_movie_update_form/<%= @movie.id %>" method="post">
@@ -20,4 +24,8 @@ Please update information for "<%= @movie.title %>".
 
 <p>
 <a href="/my_friends">View My Friends</a>
+</p>
+
+<p>
+<a href="/dashboard">View My Dashboard</a>
 </p>

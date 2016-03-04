@@ -1,10 +1,14 @@
-This page displays if there are no movie titles in the database matching the search. 
+<!-- This page displays if there are no movie titles in the database matching the search. 
 
 This page displays a form to add movie to database. 
 
 
 That movie does not exist
-Please add it to the database to rate the movie
+Please add it to the database to rate the movie -->
+
+<form action="/submit_logout" method="post">
+  <input type="submit" value="Log Out!">
+</form>
 
 <form action="/submit_new_movie" method="post">
   <p>Title: <input type="text" value="<%= params[:title] %>" name="title"></p>
@@ -22,4 +26,8 @@ Please add it to the database to rate the movie
 
 <p>
 <a href="/my_friends">View My Friends</a>
+</p>
+
+<p>
+<a href="/dashboard">View My Dashboard</a>
 </p>

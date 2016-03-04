@@ -1,9 +1,12 @@
-This will display all ratings of all friends for one user.
+<!-- This will display all ratings of all friends for one user.
 
 
 
-for each friend object we want the match object out of ratings db
+for each friend object we want the match object out of ratings db -->
 
+<form action="/submit_logout" method="post">
+  <input type="submit" value="Log Out!">
+</form>
 
   <% @f_reviews.each do |f| %>
     <ul>
@@ -13,3 +16,20 @@ for each friend object we want the match object out of ratings db
       <%= f.stars %> stars
     </ul>
 <% end %>
+
+
+<p>
+<a href="/add_review">Add A Review</a>
+</p>
+
+<p>
+<a href="/list_of_users">Add A Friend</a>
+</p>
+
+<p>
+<a href="/my_friends">View My Friends</a>
+</p>
+
+<p>
+<a href="/dashboard">View My Dashboard</a>
+</p>

@@ -3,14 +3,21 @@ this will show a poster of the movie, all of your friends who have reviewed the 
 <p><%= @movie.title %></p>
 <p><img src="<%= @movie.image_name %>"></p>
 
+<% @stars_arr.each do |num| %>
+  <%= @sum += num %>
+<% end %>
+
 <ul>
   <% @ratings.each do |rating| %>
   <li>
   <%= rating.name.first_name %> 
-  <%= rating.name.last_name %>
+  <%= rating.name.last_name %> - 
+  <%= rating.stars %> stars
   </li>
   <% end %>
 </ul>
+
+
 
 
 

@@ -71,14 +71,16 @@ end
 MyApp.get "/movie_status_page/:movie_id" do
   @current_user = User.find_by_id(session["user_id"])
   if !@current_user.nil?
-    @friendses_ids = []
+    @stars_arr = []
+    @sum = 0
     @friends = Friend.where(user_id: session["user_id"])
-    @friends.each do |friend|
-      @friendses_ids << friend.friend_id
-    end
     @movie = Movie.find_by_id(params[:movie_id])
-    @ratings = Rating.where({movie_id: params["movie_id"], user_id: @friendses_ids})
-    binding.pry
+    @ratings = Friend.friend_review_for_movies(@friends, @movie)
+      @ratings.each do |rating|
+        @stars_arr << rating.stars
+      end
+      @stars_divider = @stars_arr.count
+    end
     erb :"movies/movie_status"
   else
   end

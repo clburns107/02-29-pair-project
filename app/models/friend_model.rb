@@ -32,4 +32,27 @@ class Friend < ActiveRecord::Base
     return friendses_rating_objects
   end
 
+  def self.friend_review_for_movies(friends, movie)
+    friendses_ids = []
+    friendses_rating_objects = []
+    friends.each do |f|
+      friendses_ids << f.friend_id
+    end
+      friendses_rating_objects = Rating.where({movie_id: movie.id, user_id: friendses_ids})
+    return friendses_rating_objects
+
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

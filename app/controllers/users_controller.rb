@@ -31,12 +31,13 @@ MyApp.post "/submit/new_user" do
   @new_user.last_name = params[:last_name]
   @new_user.email = params[:email]
   @new_user.password = params[:password]
-
+  @new_user.set_errors
   @new_user.email_valid
   @new_user.password_valid
   @new_user.name_valid
+  @errors = @new_user.get_errors
 
-  if @new_user.set_errors == []
+  if @new_user.set_errors == nil
   @new_user.save
     if @new_user.password = params[:password]
       session["user_id"] = @new_user.id

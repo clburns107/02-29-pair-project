@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   # Sets @errors Array to an Array of errors.
   def set_errors
     @errors = []
+  end
+
+  def get_errors
     return @errors
   end
 
@@ -17,7 +20,7 @@ class User < ActiveRecord::Base
       @errors << "Email cannot be blank!"
     end
     if self.email.include?("@") == false
-      @errors << "Email must be valid!"
+      @errors << "Email must contain an '@' symbol!"
     end
   end
 

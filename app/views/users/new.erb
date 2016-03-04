@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 
-<% if @errors != [] %>
+<% if @errors != nil %>
   <% @errors.each do |error| %>
     <p><%= error %></p>
   <% end %>

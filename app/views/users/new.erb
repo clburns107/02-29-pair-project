@@ -1,6 +1,12 @@
 <!doctype html>
 <html>
 
+<% if @errors != [] %>
+  <% @errors.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
 <form action="/submit_logout" method="post">
   <input type="submit" value="Log Out!">
 </form>

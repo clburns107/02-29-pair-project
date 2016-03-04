@@ -6,24 +6,35 @@
 class User < ActiveRecord::Base
   #
   # Determines if value is an empty String.
-  # Sets @erros Array to an Array of errors.
-  # def set_errors
-  #   @errors = []
-  #   if self.email == ""
-  #     @errors << "Email cannot be blank!"
-  #   end
+  # Sets @errors Array to an Array of errors.
+  def set_errors
+    @errors = []
+    return @errors
+  end
 
-  #   if self.password == ""
-  #     @errors << "Password cannot be blank!"
-  #   end
-  #   if self.first_name == ""
-  #     @errors << "First name cannot be blank!"
-  #   end
-  #   if self.last_name == ""
-  #     @errors << "Last name cannot be blank!"
-  #   end
-  #   return @errors
-  # end
+  def email_valid
+    if self.email == ""
+      @errors << "Email cannot be blank!"
+    end
+    if self.email.include?("@") == false
+      @errors << "Email must be valid!"
+    end
+  end
+
+  def password_valid
+    if self.password == ""
+      @errors << "Password cannot be blank!"
+    end
+  end
+
+  def name_valid
+    if self.first_name == ""
+      @errors << "First name cannot be blank!"
+    end
+    if self.last_name == ""
+      @errors << "Last name cannot be blank!"
+    end   
+  end
 
   # def is_valid
   #   self.set_errors

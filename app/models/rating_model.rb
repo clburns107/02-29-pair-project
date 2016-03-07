@@ -15,22 +15,52 @@ class Rating < ActiveRecord::Base
     return user
   end
 
-  # Class Method for an average star ranking by all of a users
-  # friends that have rated it
+  # Class Method
+  # Defines the average ratings a users's friends have given a movie.
   #
-  # takes an argument of a collection ratings objects for 1 movie
+  # Example: 
+  ## sum_stars = 18
+  ## arr_stars.count = 6
+  ## avg_stars = 3
   #
-  # returns average rating for of stars for 1 move in movie objects
+  # Returns an Integer.
   def self.avg_stars(ratings_object)
-    array = []
+    return = sum_stars / arr_stars.count
+  end
+
+  # Defines an Array of ratings a users's friends have given movie.
+  #
+  # Example: arr_stars = [3, 4, 3, 5, 1, 2]
+  #
+  # Returns an Array of Integers.
+  def arr_stars(ratings_object)
+    array_of_stars = []
     ratings_object.each do |rating|
-      array << rating.stars
+      array_of_stars << rating.stars
     end
+  end
+
+  # Defines the sum of all ratings a user's friends have given a movie.
+  #
+  # Example: [3, 4, 3, 5, 1, 2].each do |star|
+  ## 0+=3, 3+=4, 7+=3, 10+=5, 15+=1, 16+=2
+  ## sum_stars = 18
+  # 
+  # Returns and Integer for sum.
+  def sum_stars
     sum = 0
-    array.each do |star|
+    arr_stars.each do |star|
       sum += star
     end
-    @avg_stars = sum / array.count
-    return @avg_stars
   end
+
+#   # Defines the average ratings a users's friends have given a movie.
+#   #
+#   # Example: 18 / 6
+#   ## avg_stars = 3
+#   #
+#   # Returns an Integer.
+#   def avg_stars
+#     return sum_stars / arr_stars.count
+#   end
 end

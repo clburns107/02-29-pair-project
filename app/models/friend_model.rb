@@ -21,8 +21,8 @@ class Friend < ActiveRecord::Base
   # Returns all ratings belonging to all friends inside of an array
   def self.friends_reviews(friends)
     friendses_ids = []
-    friends.each do |f|
-      friendses_ids << f.friend_id
+    friends.each do |friend|
+      friendses_ids << friend.friend_id
     end
     friendses_rating_objects = Rating.where({user_id: friendses_ids})
     return friendses_rating_objects
@@ -35,8 +35,8 @@ class Friend < ActiveRecord::Base
   # returns all ratings object for any one movie by all of a users friends
   def self.friend_review_for_movies(friends, movie)
     friendses_ids = []
-    friends.each do |f|
-      friendses_ids << f.friend_id
+    friends.each do |friend|
+      friendses_ids << friend.friend_id
     end
     friendses_rating_objects = Rating.where({movie_id: movie.id, user_id: friendses_ids})
     return friendses_rating_objects

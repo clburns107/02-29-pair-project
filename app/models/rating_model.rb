@@ -25,7 +25,7 @@ class Rating < ActiveRecord::Base
   #
   # Returns an Integer.
   def self.avg_stars(ratings_object)
-    return = sum_stars / arr_stars.count
+    return sum_stars / arr_stars.count
   end
 
   # Defines an Array of ratings a users's friends have given movie.

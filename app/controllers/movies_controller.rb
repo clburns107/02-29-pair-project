@@ -74,7 +74,9 @@ MyApp.get "/movie_status_page/:movie_id" do
     @friends = Friend.where(user_id: session["user_id"])
     @movie = Movie.find_by_id(params[:movie_id])
     @ratings = Friend.friend_review_for_movies(@friends, @movie)
-    @avg = Rating.avg_stars(@ratings)
+
+    @avg = Rating.average_ratings(@ratings)
+
     erb :"movies/movie_status"
   else
     erb :"logins/login_error"

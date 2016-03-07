@@ -24,7 +24,7 @@ class Rating < ActiveRecord::Base
   ## avg_stars = 3
   #
   # Returns an Integer.
-  def self.avg_stars(ratings_object)
+  def self.avg_stars
     return sum_stars / arr_stars.count
   end
 

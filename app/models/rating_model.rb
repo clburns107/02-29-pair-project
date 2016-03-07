@@ -38,6 +38,7 @@ class Rating < ActiveRecord::Base
     ratings_object.each do |rating|
       array_of_stars << rating.stars
     end
+    return array_of_stars
   end
 
   # Defines the sum of all ratings a user's friends have given a movie.
@@ -52,6 +53,7 @@ class Rating < ActiveRecord::Base
     arr_stars.each do |star|
       sum += star
     end
+    return sum
   end
 
 #   # Defines the average ratings a users's friends have given a movie.

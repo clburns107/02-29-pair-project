@@ -1,4 +1,4 @@
-# Columns: user_id, movie_id, rating
+# Columns: user_id, movie_id, stars
 #
 # Relationship to users: id on users table
 # Relationship to movies: id on movies table

@@ -39,7 +39,7 @@ class RatingTest < Minitest::Test
     @rating2.user_id = @user2.id
     @rating2.movie_id = @movie1.id
     @rating2.stars = 1
-    @rating1.save
+    @rating2.save
   end
 
   def test_potato

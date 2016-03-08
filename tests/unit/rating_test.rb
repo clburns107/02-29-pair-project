@@ -59,7 +59,6 @@ class RatingTest < Minitest::Test
     all_ratings_for_movie = Rating.where(movie_id: @movie1.id)
     assert_equal(3, Rating.average_ratings(all_ratings_for_movie))
   end
-  # Your tests are defined here.
 end
 
 

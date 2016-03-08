@@ -40,8 +40,6 @@ class RatingTest < Minitest::Test
     @rating2.movie_id = @movie1.id
     @rating2.stars = 1
     @rating1.save
-
-
   end
 
   def test_potato
@@ -49,12 +47,17 @@ class RatingTest < Minitest::Test
   end
 
   def test_movie_title
+    assert_equal("The Brass Teapot", @rating1.title)
   end
 
   def test_user_name
+    assert_equal("Kenny", @rating1.name.first_name)
+    assert_equal("Loggins", @rating1.name.last_name)
   end
 
   def test_average_rating_for_movie
+    all_ratings_for_movie = Rating.where(movie_id: @movie1.id)
+    assert_equal(3, Rating.average_ratings(all_ratings_for_movie))
   end
   # Your tests are defined here.
 end

@@ -20,9 +20,9 @@ class Rating < ActiveRecord::Base
   # Takes an argument of ratings objects for 1 movie
   #
   # Returns array of integers
-  def self.average_ratings(ratings_object)
+  def self.average_ratings(ratings_objects)
     @ratings_array = []
-    ratings_object.each do |rating|
+    ratings_objects.each do |rating|
       @ratings_array << rating.stars
     end
     self.sum_array

@@ -11,24 +11,30 @@ class User < ActiveRecord::Base
     @errors = []
   end
 
+  # Gets @errors Array.
   def get_errors
     return @errors
   end
 
+  # Defines if a user enters an empty String.
+  # Returns a Boolean.
   def email_empty
     self.email = ""
   end
 
+  # Defines if a user enters an "@" symbol.
+  # Returns a Boolean.
   def email_tomlinson
-    self.email.indclude?("@")
+    self.email.include?("@")
   end
 
+  # Defines if an user's entered email is valid.
+  # Returns an Array for @errors, 
+  # @errors will be empty if the user entered a valid email.
   def email_valid
-    # if self.email == ""
     if email_empty
       @errors << "Email cannot be blank!"
     end
-    # if self.email.include?("@") == false
     if email_tomlinson == false
       @errors << "Email must contain an '@' symbol!"
     end

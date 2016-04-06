@@ -1,84 +1,58 @@
 <!-- This page will display the movie info stored in database and buttons that allow a user to score it.  -->
 
+<!-- begin Star Rating files -->
+
+<!-- end Star Rating files -->
+
 <form action="/submit_logout" method="post">
   <input type="submit" value="Log Out!">
 </form>
 
-<link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/star-rating.js" type="text/javascript"></script>
-
 
 <div class="block block-inverse">
   <div class="container">
-    <h1><%= @movie.title %></h1>
-    <div><img src="<%= @movie.image_name %>"></div>
-    
-<input id="rating-system" type="number" class="rating" min="1" max="5" step="1">
+    <h1 class="text-xs-center"><%= @movie.title %></h1>
+    <div><img class="center-block" src="<%= @movie.image_name %>"></div>
+    <br>
+    <div class="row">
 
-    
+      <div class="col-sm-12 col-md-2">
+        <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/1" method="post"> 
+          <input type="button" class="btn btn-lg btn-pill btn-default" value="1 STAR">
+        </form>
+      </div>
+
+      <div class="col-sm-12 col-md-2">
+        <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/2" method="post"> 
+          <input type="button" class="btn btn-lg btn-pill btn-default" value="2 STAR">
+        </form>  
+      </div>
+
+      <div class="col-sm-12 col-md-2">
+        <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/3" method="post"> 
+          <input type="button" class="btn btn-lg btn-pill btn-default" value="3 STAR">
+        </form>
+      </div>
+
+      <div class="col-sm-12 col-md-2">
+        <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/4" method="post"> 
+          <input type="button" class="btn btn-lg btn-pill btn-default" value="4 STAR">
+        </form>
+      </div>
+
+      <div class="col-sm-12 col-md-2">
+        <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/5" method="post"> 
+          <input type="button" class="btn btn-lg btn-pill btn-default" value="5 STAR">
+        </form>
+      </div>
+
+
+      <div class="col-sm-12 col-md-2"></div>
+        <form action="/update_movie/<%= @movie.id %>">
+          <input type="button" class="btn btn-lg btn-pill btn-warning" value="Update">
+        </form>
+      </div>
+    </div>
+
   </div>
 </div>
-
-
-
-<table border="0">
-  <tr>
-    <td>
-      <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/1" method="post"> 
-        <input type="submit" value="1 STAR">
-      </form>
-    </td>
-
-    <td>
-      <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/2" method="post"> 
-        <input type="submit" value="2 STAR">
-      </form>
-    </td>
-
-    <td>
-      <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/3" method="post"> 
-        <input type="submit" value="3 STAR">
-      </form>
-    </td>
-
-    <td>
-      <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/4" method="post"> 
-        <input type="submit" value="4 STAR">
-      </form>
-    </td>
-
-    <td>
-      <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/5" method="post"> 
-        <input type="submit" value="5 STAR">
-      </form>
-    </td>
-
-  </tr>
-</table>
-
-
-<form action="/update_movie/<%= @movie.id %>">
-  <input type="submit" value="Update Movie">
-</form>
-
-
-<p>
-<a href="/view_friends_reviews">View Friends' Reviews</a>
-</p>
-
-<p>
-<a href="/add_review">Add A Review</a>
-</p>
-
-<p>
-<a href="/list_of_users">Add A Friend</a>
-</p>
-
-<p>
-<a href="/my_friends">View My Friends</a>
-</p>
-
-<p>
-<a href="/dashboard">View My Dashboard</a>
-</p>

@@ -1,29 +1,25 @@
 <div class="block">  
   <div class="container">
-    <div class="block block-fill-height text-center">
-      <div class="block-xs-bottom">
-        <div class="container-fluid">
-         <blockquote class="pull-quote">
-          <h1>
-            <%= @current_user.first_name %>'s Dashboard
-          </h1>
-            <p>
-              <% if @ratings == [] %>
-                "No rankings yet!"
-              <% else %>
-                <ul>
-                  <% @ratings.each do |rating| %>
-                    <li>
-                    <%= rating.title %> 
-                    <%= rating.stars %> Stars
-                    </li>
-                  <% end %>
-                </ul>
+    <div class="container-fluid">
+     <blockquote class="pull-quote">
+      <h1>
+        <%= @current_user.first_name %>'s Dashboard
+      </h1>
+        <p>
+          <% if @ratings == [] %>
+            "No rankings yet!"
+          <% else %>
+            <ul>
+              <% @ratings.each do |rating| %>
+                <li>
+                <%= rating.title %> 
+                <%= rating.stars %> Stars
+                </li>
               <% end %>
-            </p>
-          </blockquote>
-        </div>
-      </div>
+            </ul>
+          <% end %>
+        </p>
+      </blockquote>
     </div>
   </div>
 </div>

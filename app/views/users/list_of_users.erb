@@ -1,35 +1,27 @@
-<form action="/submit_logout" method="post">
-  <input type="submit" value="Log Out!">
-</form>
+<div class="block">  
+  <div class="container">
+    <div class="container-fluid">
+         <blockquote class="pull-quote">
+          <h1>
+            Add A Friend
+          </h1>
+            <ul>
+              <% @users.each do |user| %>
+                <li>
+                  <p>
+                    <%= user.last_name %>, 
+                    <%= user.first_name %>
+                    <form action="/add_friend/<%= user.id %>" method="post">
+                      <button type="submit" class="btn btn-sm btn-pill btn-primary">Add Friend</button>
+                    </form>
+                  </p>
+                </li>
+                <br>
+              <% end %>
+            </ul>
+          </blockquote>
+    </div>
+  </div>
+</div>
 
-<h1>List of all users</h1>
 
-<ul>
-  <% @users.each do |user| %>
-  <li>
-    <p>
-      <%= user.last_name %>, 
-      <%= user.first_name %> - 
-      <form action="/add_friend/<%= user.id %>" method="post">
-          <input type="submit" value="Add Friend!">
-      </form>
-    </p>
-  </li>
-  <% end %>
-</ul>
-
-<p>
-<a href="/all_friends_reviews">View Friends' Reviews</a>
-</p>
-
-<p>
-<a href="/add_review">Add A Review</a>
-</p>
-
-<p>
-<a href="/my_friends">View My Friends</a>
-</p>
-
-<p>
-<a href="/dashboard">View My Dashboard</a>
-</p>

@@ -10,24 +10,12 @@ Please add it to the database to rate the movie -->
   <input type="submit" value="Log Out!">
 </form>
 
-<form action="/submit_new_movie" method="post">
-  <p>Title: <input type="text" value="<%= params[:title] %>" name="title"></p>
-  <p>Image Name: <input type="text" name="image_name"></p>
-  <input type="submit" value="Submit New Movie!">
-</form>
-
-<p>
-<a href="/view_friends_reviews">View Friends' Reviews</a>
-</p>
-
-<p>
-<a href="/list_of_users">Add A Friend</a>
-</p>
-
-<p>
-<a href="/my_friends">View My Friends</a>
-</p>
-
-<p>
-<a href="/dashboard">View My Dashboard</a>
-</p>
+<div class="block block-inverse">
+  <div class="container">
+    <form action="/submit_new_movie" method="post">
+      <p>Title: <input type="text" value="<%= params[:title] %>" name="title"></p>
+      <p>Image Name: <input type="text" name="image_name"></p>
+      <input type="submit" value="Submit New Movie!">
+    </form>
+  </div>
+</div>

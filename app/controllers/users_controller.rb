@@ -22,6 +22,7 @@ end
 
 # Displays a form to Create a new user.
 MyApp.get "/users/new" do
+  @users = User.count
   erb :"users/new"
 end
 

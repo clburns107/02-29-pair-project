@@ -1,52 +1,37 @@
-<!doctype html>
-<html>
-
-<% if @errors != nil %>
-  <% @errors.each do |error| %>
-    <p><%= error %></p>
-  <% end %>
-<% end %>
-
-<form action="/submit_logout" method="post">
-  <input type="submit" value="Log Out!">
-</form>
-
-<h1 align="center"> Create an Account!
-  <meta charset="utf-8">
-  <title>Create User Page</title>
-</h1>
-
-<body>
-
-  <form action="/submit/new_user" method="post">
-    <p>Email: <input type="text" name="email"></p>
-    <p>Password: <input type="text" name="password"></p>
-    <p>First Name: <input type="text" name="first_name"></p>
-    <p>Last Name: <input type="text" name="last_name"></p>
-    <input type="submit" value="Create Account!">
-  </form>
-
-</body>
-</html>
-
-<p>
-<a href="/all_friends_reviews">View Friends' Reviews</a>
-</p>
-
-<p>
-<a href="/add_review">Add A Review</a>
-</p>
-
-<p>
-<a href="/list_of_users">Add A Friend</a>
-</p>
-
-<p>
-<a href="/my_friends">View My Friends</a>
-</p>
-
-<p>
-<a href="/dashboard">View My Dashboard</a>
-</p>
-
-
+<div class="block">
+  <div class="container">
+    <div class="block text-center">
+      <div class="container-fluid">
+        <h4 class="m-b-md">
+          Join over <%= @users %> friends currently sharing suggestions on movies to watch! <strong>free</strong> forever!
+        </h4>
+          <% if @errors != nil %>
+            <% @errors.each do |error| %>
+              <p><%= error %></p>
+            <% end %>
+          <% end %>
+        <form class="form-inline" action="/submit/new_user" method="post">
+          <input class="form-control m-b" type="text" name="first_name" placeholder="First Name">
+          <input class="form-control m-b" type="text" name="last_name" placeholder="Last Name"><br>
+          <input class="form-control m-b" type="text" name="email" placeholder="Email">
+          <input class="form-control m-b" type="text" name="password" placeholder="Password"><br>
+          <button class="btn btn-primary m-b" type="submit">Create Account</button>
+        </form>
+        <small class="text-muted">
+          If you already have an account please login.
+          <a href="/">Log In!</a>
+        </small>
+      </div>
+    </div>
+    <div class="block block-bordered text-center">
+      <div class="container-fluid">
+       <blockquote class="pull-quote">
+          <p>
+            “Brad has never steered me wrong with his love for Top Gun!
+          </p>
+          <cite>Created by Courtney Burns and Brad Biehl</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>

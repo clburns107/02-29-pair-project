@@ -1,21 +1,43 @@
-<!doctype html>
-<html>
-<h1 align="center"> Welcome to Friendflix!
-  <meta charset="utf-8">
-  <title>Log in to account</title>
-</h1>
+<style>
+h1 {color:red;}
+</style>
 
-<body>
+<div class="block block-inverse">
+  <div class="container">
+    <div class="block block-inverse text-center">
+      <h1 class="block-title">Welcome to Friendflix</h1>
+      <h4 class="text-muted">A site to get suggestions on great movies to watch.</h4>
+    </div>
+  </div>
+</div>
 
-  <form action="/login_user" method="post">
-    <p>Email: <input type="text" name="email"></p>
-    <p>Password: <input type="password" name="password"></p>
-    <input type="submit" value="Log In!">
-  </form>
-
-  <a href="/users/new">Create a New Account!</a>
-
-</body>
-</html>
-
-
+<div class="block">
+  <div class="container">
+    <div class="block text-center">
+      <div class="container-fluid">
+        <h4 class="m-b-md">
+          Join over 4 friends currently sharing suggestions on movies to watch! <strong>free</strong> forever!
+        </h4>
+        <form class="form-inline" action="/login_user" method="post">
+          <input class="form-control m-b" name="email" placeholder="email address">
+          <input class="form-control m-b" type="password" name="password" placeholder="Enter Password">
+          <button class="btn btn-primary m-b">Login!</button>
+        </form>
+        <small class="text-muted">
+          If you do not already have an account please create one to login.
+          <a href="/users/new">Create A New Account!</a>
+        </small>
+      </div>
+    </div>
+    <div class="block block-bordered text-center">
+      <div class="container-fluid">
+       <blockquote class="pull-quote">
+          <p>
+            “Brad has never steered me wrong with his love for Top Gun!
+          </p>
+          <cite>Created by Courtney Burns and Brad Biehl</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>

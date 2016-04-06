@@ -9,8 +9,13 @@ end
 
 # View a list of all the users the current_user is friends with.
 MyApp.get "/my_friends" do
-  @all_my_friends = Friend.where(user_id: session["user_id"])
-  erb :"friends/users_friends"
+  @current_user = User.find_by_id(session["user_id"])
+  if !@current_user.nil?
+    @all_my_friends = Friend.where(user_id: session["user_id"])
+    erb :"friends/users_friends"
+  else
+    erb :"logins/login_error"
+  end
 end
 
 # View a single friends's movie reviews.

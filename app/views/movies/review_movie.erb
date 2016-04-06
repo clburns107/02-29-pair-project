@@ -4,11 +4,6 @@
 
 <!-- end Star Rating files -->
 
-<form action="/submit_logout" method="post">
-  <input type="submit" value="Log Out!">
-</form>
-
-
 <div class="block block-inverse">
   <div class="container">
     <h1 class="text-xs-center">My Review for <%= @movie.title %></h1>
@@ -18,38 +13,38 @@
 
       <div class="col-xs-12 col-sm-2">
         <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/1" method="post" class="center-contents"> 
-          <input type="button" class="btn btn-lg btn-pill btn-default" value="1">
+          <input type="submit" class="btn btn-lg btn-pill btn-default" value="1">
         </form>
       </div>
 
       <div class="col-xs-12 col-sm-2">
         <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/2" method="post" class="center-contents"> 
-          <input type="button" class="btn btn-lg btn-pill btn-default" value="2">
+          <input type="submit" class="btn btn-lg btn-pill btn-default" value="2">
         </form>  
       </div>
 
       <div class="col-xs-12 col-sm-2">
         <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/3" method="post" class="center-contents"> 
-          <input type="button" class="btn btn-lg btn-pill btn-default" value="3">
+          <input type="submit" class="btn btn-lg btn-pill btn-default" value="3">
         </form>
       </div>
 
       <div class="col-xs-12 col-sm-2">
         <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/4" method="post" class="center-contents"> 
-          <input type="button" class="btn btn-lg btn-pill btn-default" value="4">
+          <input type="submit" class="btn btn-lg btn-pill btn-default" value="4">
         </form>
       </div>
 
       <div class="col-xs-12 col-sm-2">
         <form action="/submit_movie_review/<%= @movie.id %>/<%= @current_user.id %>/5" method="post" class="center-contents"> 
-          <input type="button" class="btn btn-lg btn-pill btn-default" value="5">
+          <input type="submit" class="btn btn-lg btn-pill btn-default" value="5">
         </form>
       </div>
 
 
       <div class="col-xs-12 col-sm-2"></div>
         <form class="center-contents" action="/update_movie/<%= @movie.id %>" method="post">
-          <input type="button" class="btn btn-lg btn-pill btn-warning" value="Update">
+          <input type="submit" class="btn btn-lg btn-pill btn-warning" value="Update">
         </form>
       </div>
     </div>

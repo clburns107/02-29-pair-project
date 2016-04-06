@@ -1,42 +1,19 @@
-<!-- this will show a poster of the movie, all of your friends who have reviewed the movie, and their average rating. -->
-
-<p><%= @movie.title %></p>
-<p><img src="<%= @movie.image_name %>"></p>
-
-<%= @avg %> average stars from your friends.
-
-<ul>
-  <% @ratings.each do |rating| %>
-  <li>
-  <%= rating.name.first_name %> 
-  <%= rating.name.last_name %> - 
-  <%= rating.stars %> stars
-  </li>
-  <% end %>
-</ul>
-
-<p>
-<a href="/all_friends_reviews">View Friends' Reviews</a>
-</p>
-
-<p>
-<a href="/add_review">Add A Review</a>
-</p>
-
-<p>
-<a href="/list_of_users">Add A Friend</a>
-</p>
-
-<p>
-<a href="/my_friends">View My Friends</a>
-</p>
-
-<p>
-<a href="/dashboard">View My Dashboard</a>
-</p>
-
-
-
-
-
-
+  <!-- this will show a poster of the movie, all of your friends who have reviewed the movie, and their average rating. -->
+<div class="block block-inverse">
+  <div class="container">
+    <h1 class="text-center"><%= @movie.title %></h1>
+    <div><img class="center-block" src="<%= @movie.image_name %>"></div>
+    <div>
+      <p class="text-center h4"><%= @avg %> average stars from your friends.</p>
+    </div>
+    <div>
+      <% @ratings.each do |rating| %>
+      <p class="h5 text-center">
+      <%= rating.name.first_name %> 
+      <%= rating.name.last_name %> - 
+      <%= rating.stars %> stars
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>

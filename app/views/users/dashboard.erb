@@ -1,37 +1,29 @@
-<form action="/submit_logout" method="post">
-  <input type="submit" value="Log Out!">
-</form>
-
-<h1><%= @current_user.first_name %>'s Dashboard</h1>
-
-<p>
-  <% if @ratings == [] %>
-    "No rankings yet!"
-  <% else %>
-    <ul>
-      <% @ratings.each do |rating| %>
-        <li>
-        <%= rating.title %> 
-        <%= rating.stars %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-</p>
-
-
-<p>
-<a href="/all_friends_reviews">View Friends' Reviews</a>
-</p>
-
-<p>
-<a href="/add_review">Add A Review</a>
-</p>
-
-<p>
-<a href="/list_of_users">Add A Friend</a>
-</p>
-
-<p>
-<a href="/my_friends">View My Friends</a>
-</p>
+<div class="block">  
+  <div class="container">
+    <div class="block block-fill-height text-center">
+      <div class="block-xs-bottom">
+        <div class="container-fluid">
+         <blockquote class="pull-quote">
+          <h1>
+            <%= @current_user.first_name %>'s Dashboard
+          </h1>
+            <p>
+              <% if @ratings == [] %>
+                "No rankings yet!"
+              <% else %>
+                <ul>
+                  <% @ratings.each do |rating| %>
+                    <li>
+                    <%= rating.title %> 
+                    <%= rating.stars %> Stars
+                    </li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

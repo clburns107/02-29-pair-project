@@ -16,7 +16,7 @@ h1 {color:red;}
     <div class="block text-center">
       <div class="container-fluid">
         <h4 class="m-b-md">
-          Join over 4 friends currently sharing suggestions on movies to watch! <strong>free</strong> forever!
+          Join over <%= @users %> friends currently sharing suggestions on movies to watch! <strong>free</strong> forever!
         </h4>
         <form class="form-inline" action="/login_user" method="post">
           <input class="form-control m-b" name="email" placeholder="email address">

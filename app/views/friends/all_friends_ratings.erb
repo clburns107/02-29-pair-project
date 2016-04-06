@@ -1,35 +1,21 @@
-<!-- This will display all ratings of all friends for one user.
-
-
-
-for each friend object we want the match object out of ratings db -->
-
-<form action="/submit_logout" method="post">
-  <input type="submit" value="Log Out!">
-</form>
-
-  <% @f_reviews.each do |f| %>
-    <ul>
-      <%= f.name.first_name %>
-      <%= f.name.last_name %>: 
-      <a href="/movie_status_page/<%= f.movie_id %>"><%= f.title %>:</a>
-      <%= f.stars %> stars
-    </ul>
-<% end %>
-
-
-<p>
-<a href="/add_review">Add A Review</a>
-</p>
-
-<p>
-<a href="/list_of_users">Add A Friend</a>
-</p>
-
-<p>
-<a href="/my_friends">View My Friends</a>
-</p>
-
-<p>
-<a href="/dashboard">View My Dashboard</a>
-</p>
+<div class="block">  
+  <div class="container">
+    <div class="container-fluid">
+     <blockquote class="pull-quote">
+      <h1>
+        <%= @current_user.first_name %>'s Friends' Ratings
+      </h1>
+        <% @f_reviews.each do |f| %>
+          <ul>
+            <li>
+              <%= f.name.first_name %>
+              <%= f.name.last_name %>: 
+              <a href="/movie_status_page/<%= f.movie_id %>"><%= f.title %>:</a>
+              <%= f.stars %> stars
+            </li>
+          </ul>
+        <% end %>
+      </blockquote>
+    </div>
+  </div>
+</div>

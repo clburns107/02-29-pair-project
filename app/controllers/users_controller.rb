@@ -32,14 +32,8 @@ MyApp.post "/submit/new_user" do
   @new_user.last_name = params[:last_name]
   @new_user.email = params[:email]
   @new_user.password = params[:password]
-  @new_user.set_errors
-  @new_user.email_valid
-  @new_user.password_valid
-  @new_user.name_valid
-  @errors = @new_user.get_errors
-
-  if @errors == []
   @new_user.save
+
   @current_user = @new_user
     if @current_user.password = params[:password]
       session["user_id"] = @current_user.id
@@ -48,9 +42,6 @@ MyApp.post "/submit/new_user" do
     else
       erb :"logins/login_error"
     end
-  else
-    erb :"users/new"
-  end 
 end
 
 # Displays a form to edit a user's profile information.
